@@ -1,0 +1,73 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+$font-family-sans-serif: 'Barlow Semi Condensed', sans-serif;
+
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+
+$custom-colors: (
+    //Primary
+    "Moderate-violet": hsl(263, 55%, 52%),
+    "Very-dark-grayish-blue": hsl(217, 19%, 35%),
+    "Very-dark-blackish-blue": hsl(219, 29%, 14%),
+    "White": hsl(0, 0%, 100%),
+    //Neutral
+    "Light-gray": hsl(0, 0%, 81%),
+    "Light-grayish-blue": hsl(210, 46%, 95%)
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+// 4. Include any optional Bootstrap components as you like
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+
+// 5. Add additional custom code here
+
+//card
+.fw-5{
+    font-weight: 500;
+}
+.fw-6{
+    font-weight: 600;
+}
+
+.bg-img{
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 85% top;
+}
+
+.verified{
+    opacity: .5;
+    font-size: .9rem;
+}
+
+.img-profile{
+    width: 50px;
+    height: 50px;
+}
+
+.cite{
+    opacity: .7;
+}
